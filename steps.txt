@@ -1,0 +1,20 @@
+Create the Go module:
+go mod init github.com/hiteshwagh9383/CodePulse
+This will create a go.mod file, which will manage your project dependencies.
+
+CodePulse/
+├── server/                  # Main server logic (starts HTTP server)
+│   └── server.go
+├── vendor/                  # Vendor folder (local copies of dependencies)
+├── internal/
+│   ├── model/               # Data models (like Task struct)
+│   │    └── models.go
+│   ├── repository/          # Database logic (connection and task repository)
+│   │    ├── main.go
+├── config               # (Optional) Configuration file for DB etc.
+│   └── config.yaml  
+├── Dockerfile                # Dockerfile to containerize the Go app
+├── docker-compose.yml        # Docker Compose to run app + DB together
+├── go.mod                    # Go module file
+├── go.sum                    # Go module checksum file
+└── README.md                 # Project documentation
