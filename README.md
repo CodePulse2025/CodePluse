@@ -63,7 +63,7 @@ The vendor/ directory has been included to ensure that all dependencies are bund
 
 | Service          | Description                            |
 | ---------------- | -------------------------------------- |
-| user-service     | Auth + developer profiles (JWT-based)  |
+| user-service     | Auth + Developer profiles (JWT-based)  |
 | activity-service | Records developer activity events      |
 | insights-service | Serves analytics and leaderboards      |
 | event-ingestor   | Sends fake GitHub events (for testing) |
