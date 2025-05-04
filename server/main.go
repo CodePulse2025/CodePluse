@@ -27,11 +27,28 @@ func main() {
 	router.GET("/tasks", getTasks)          // Get tasks from DB
 	router.GET("/repos", fetchRepositories) // Get repositories from GitHub
 	router.GET("/commits", fetchCommits)
+	router.GET("/prs", fetchPRs) // Get pull requests from GitHub
 
 	// Start the server
 	if err := router.Run(":8080"); err != nil {
 		log.Fatalf("Failed to start server: %v", err)
 	}
+}
+func fetchPRs(c *gin.Context) {
+	db := repository.GetDB()
+	var repos []model.Repository
+	if err := db.Find(&repos).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to fetch repositories"})
+		return
+	}
+
+	for _, repo := range repos {
+		if err := service.FetchPullRequestsForRepo(repo.Name); err != nil {
+			log.Println("Failed to fetch PRs:", err)
+		}
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "PRs fetched and stored"})
 }
 
 // Handler to fetch tasks from the database
