@@ -103,7 +103,7 @@ The database has tables for:
 
 - **Developers**: Stores user information.
 - **Commits**: Records developer commits.
-- **PRs**: Tracks pull requests.
+- **PRs**: Tracks pull requests .
 - **Reviews**: Stores pull request reviews.
 
 ### gRPC Communication
