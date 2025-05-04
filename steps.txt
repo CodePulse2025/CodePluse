@@ -11,8 +11,13 @@ CodePulse/
 │   │    └── models.go
 │   ├── repository/          # Database logic (connection and task repository)
 │   │    ├── main.go
+│   ├── service/          
+│   │    ├── repo_service.go
+│   │    ├── commit_service.go
 ├── config               # (Optional) Configuration file for DB etc.
 │   └── config.yaml  
+├── event-ingestor              
+│   main.go
 ├── Dockerfile                # Dockerfile to containerize the Go app
 ├── docker-compose.yml        # Docker Compose to run app + DB together
 ├── go.mod                    # Go module file

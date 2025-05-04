@@ -28,7 +28,7 @@ func InitDB() {
 	}
 
 	// Auto migrate (create tables automatically)
-	db.AutoMigrate(&model.Task{}, &model.Developer{}, &model.Commit{}, &model.PR{}, &model.Review{})
+	db.AutoMigrate(&model.Task{}, &model.Developer{}, &model.Commit{}, &model.PR{}, &model.Review{}, &model.Repository{})
 
 	log.Println("Database connected & migrated successfully")
 

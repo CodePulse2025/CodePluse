@@ -23,3 +23,6 @@ services:
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB_NAME: codepulse_db
+    volumes:
+      - .:/app  # Mount current dir into container
+    command: sh -c "while true; do go build -o main ./server && ./main; sleep 1; done"
