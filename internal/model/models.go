@@ -30,14 +30,17 @@ type Commit struct {
 	Repository    Repository `gorm:"foreignKey:RepositoryID"`
 }
 
-// PR represents the pull request data model
-type PR struct {
-	ID          string `gorm:"primaryKey"`
-	DeveloperID string
-	RepoName    string
-	PRNumber    int
-	Status      string
-	CreatedAt   string
+type PullRequest struct {
+	ID           uint `gorm:"primaryKey"`
+	PRNumber     int  `gorm:"index"`
+	Title        string
+	State        string
+	CreatedAt    string
+	MergedAt     *string
+	UserLogin    string
+	RepositoryID uint
+	Assignees    []*Developer `gorm:"many2many:pr_assignees;"`
+	Reviewers    []*Developer `gorm:"many2many:pr_reviewers;"`
 }
 
 // Review represents the code review data model
