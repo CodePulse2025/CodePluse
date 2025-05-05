@@ -14,6 +14,8 @@ CodePulse/
 │   ├── service/          
 │   │    ├── repo_service.go
 │   │    ├── commit_service.go
+│   │    ├── pr_service.go
+
 ├── config               # (Optional) Configuration file for DB etc.
 │   └── config.yaml  
 ├── event-ingestor              

@@ -1,3 +1,13 @@
 /vendor/
 .env.env
 .env
+
+frontend/dashboard/node_modules/
+frontend/dashboard/.env
+frontend/dashboard/.DS_Store
+frontend/dashboard/build/
+frontend/dashboard/.next/
+frontend/dashboard/npm-debug.log*
+frontend/dashboard/yarn-debug.log*
+frontend/dashboard/yarn-error.log*
+frontend/dashboard/package-lock.json # Optional if you use yarn
