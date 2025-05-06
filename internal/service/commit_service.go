@@ -40,7 +40,7 @@ func FetchCommitsForRepo(repoName string) ([]model.Commit, error) {
 		commitData := c["commit"].(map[string]interface{})
 		message := commitData["message"].(string)
 		date := commitData["author"].(map[string]interface{})["date"].(string)
-
+		fmt.Println("Commit Data:", commitData)
 		committerInfo, ok := commitData["committer"].(map[string]interface{})
 		if !ok || committerInfo == nil {
 			continue // skip if no committer info (can happen)

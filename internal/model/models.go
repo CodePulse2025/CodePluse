@@ -58,3 +58,13 @@ type Repository struct {
 	URL       string `gorm:"not null"`
 	CreatedAt time.Time
 }
+
+type TopContributor struct {
+	Name  string
+	Email string
+	Count int
+}
+type TopReviewer struct {
+	Name        string `json:"name"`
+	ReviewCount int    `json:"review_count"`
+}
